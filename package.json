@@ -1,0 +1,25 @@
+{
+  "name": "xogger",
+  "displayName": "Xogger",
+  "version": "1.0.0",
+  "description": "Xogger is a node package to create logs.",
+  "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/xxgicoxx/xogger.git"
+  },
+  "bugs": {
+    "url": "https://github.com/xxgicoxx/xogger/issues"
+  },
+  "homepage": "https://github.com/xxgicoxx/xogger#readme",
+  "keywords": [
+    "log",
+    "node"
+  ],
+  "dependencies": {}
+}
