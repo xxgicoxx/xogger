@@ -16,7 +16,7 @@ xogger.error('Error log');
 xogger.info('Info log');
 xogger.warn('Warn log');
 
-xogger.debug('Debug Log', {
+xogger.debug('Debug log', {
     folder: './debug/'
 });
 
