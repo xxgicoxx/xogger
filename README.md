@@ -1,42 +1,35 @@
 # Xogger
-
 Xogger is a node package to create logs.
 
-# Installation
+### Installation
 ````
-npm install xogger --save
+npm install xogger
 ````
 
-# Example
-````
+### Example
+```javascript
 const xogger = require('xogger');
 
+// Log on default folder and name
 xogger.debug('Debug log');
 xogger.error('Error log');
 xogger.info('Info log');
 xogger.warn('Warn log');
 
+// Change folder of logs
 xogger.debug('Debug log', {
     folder: './debug/'
 });
 
+// Change folder and name of logs
 xogger.debug('Debug log', {
     folder: './debug/',
     name: 'lol'
 });
-````
+```
 
-# Options
-````
-//Folder name
-folder: './logs/'
+### Built With
+* [Node.js](https://nodejs.org/en/)
 
-//Log name
-name: 'system_log'
-
-//Example
-{
-    folder: './logs/',
-    name: 'system_log'
-}
-````
+### Authors
+* **Giovani de Oliveira** - [xxgicoxx](https://github.com/xxgicoxx)
