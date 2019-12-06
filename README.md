@@ -16,14 +16,17 @@ xogger.error('Error log');
 xogger.info('Info log');
 xogger.warn('Warn log');
 
+// Feed line
+xogger.feed();
+
 // Change folder of logs
-xogger.debug('Debug log', {
-    folder: './debug/'
+xogger.config({
+    folder: './logs/folder/'
 });
 
 // Change folder and name of logs
-xogger.debug('Debug log', {
-    folder: './debug/',
+xogger.config({
+    folder: './logs/folder/',
     name: 'lol'
 });
 ```

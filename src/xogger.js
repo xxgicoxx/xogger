@@ -1,25 +1,52 @@
 const fs = require('fs');
+let opt = {};
 
-save = (message, type, options) => {
+add = (message, type) => {
     let date = new Date();
-    let folder = (options && options.folder) || './logs/';
-    let name = (options && options.name) || `${date.getFullYear()}${date.getMonth()}${date.getDate()}`;
+    let folder = (opt && opt.folder) || './logs/';
+    let name = (opt && opt.name) || `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
 
     if (!fs.existsSync(folder)){
-        fs.mkdirSync(folder);
+        fs.mkdirSync(folder, {recursive: true});
     }
 
-    fs.appendFileSync(`${folder}${name}.log`, `${date.getTime()} ${type} ${message}\n`);
+    fs.appendFileSync(`${folder}${name}.log`, `${getTime(date)} ${type} ${message}\n`);
+}
+
+feed = () => {
+    let date = new Date();
+    let folder = (opt && opt.folder) || './logs/';
+    let name = (opt && opt.name) || `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+
+    if (!fs.existsSync(folder)){
+        fs.mkdirSync(folder, {recursive: true});
+    }
+
+    fs.appendFileSync(`${folder}${name}.log`, `\n`);
+}
+
+pad = (num, size) => {
+    var s = num+"";
+    while (s.length < size) s = "0" + s;
+    return s;
+}
+
+getTime = (date) => {
+    return `${pad(date.getHours(), 2)}:${pad(date.getMinutes(), 2)}:${pad(date.getSeconds(), 2)}:${date.getMilliseconds()}`;
 }
 
 module.exports = {
-    debug: (message, options) => {
-        save(message, 'DEBUG', options);
-    }, error: (message, options) => {
-        save(message, 'ERROR', options);
-    }, warn: (message, options) => {
-        save(message, 'WARN', options);
-    }, info: (message, options) => {
-        save(message, 'INFO', options);
+    config: (options) => {
+        opt = options;
+    }, debug: (message) => {
+        add(message, '[DEBUG] -');
+    }, error: (message) => {
+        add(message, '[ERROR] -');
+    }, warn: (message) => {
+        add(message, '[WARN] -');
+    }, info: (message) => {
+        add(message, '[INFO] -');
+    }, feed: () => {
+        feed();
     }
 }
