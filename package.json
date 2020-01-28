@@ -2,7 +2,7 @@
   "name": "xogger",
   "displayName": "Xogger",
   "version": "2.0.0",
-  "description": "Xogger is a node package to create logs",
+  "description": "Node package to create logs",
   "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",
   "license": "MIT",
   "main": "index.js",

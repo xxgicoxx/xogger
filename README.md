@@ -1,5 +1,5 @@
 # Xogger
-Xogger is a node package to create logs.
+Node package to create logs.
 
 ### Installation
 ````
