@@ -1,52 +1,62 @@
 const fs = require('fs');
+
 let opt = {};
 
-add = (message, type) => {
-    let date = new Date();
-    let folder = (opt && opt.folder) || './logs/';
-    let name = (opt && opt.name) || `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
+function pad(num, size) {
+  let s = `${num}`;
 
-    if (!fs.existsSync(folder)){
-        fs.mkdirSync(folder, {recursive: true});
-    }
+  while (s.length < size) {
+    s = `0${s}`;
+  }
 
-    fs.appendFileSync(`${folder}${name}.log`, `${getTime(date)} ${type} ${message}\n`);
+  return s;
 }
 
-feed = () => {
-    let date = new Date();
-    let folder = (opt && opt.folder) || './logs/';
-    let name = (opt && opt.name) || `${date.getFullYear()}-${date.getMonth()}-${date.getDate()}`;
-
-    if (!fs.existsSync(folder)){
-        fs.mkdirSync(folder, {recursive: true});
-    }
-
-    fs.appendFileSync(`${folder}${name}.log`, `\n`);
+function getTime(date) {
+  return `${pad(date.getHours(), 2)}:${pad(date.getMinutes(), 2)}:${pad(date.getSeconds(), 2)}:${date.getMilliseconds()}`;
 }
 
-pad = (num, size) => {
-    var s = num+"";
-    while (s.length < size) s = "0" + s;
-    return s;
+function add(message, type) {
+  const date = new Date();
+  const folder = (opt && opt.folder) || './logs/';
+  const name = (opt && opt.name) || `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(date.getDate(), 2)}`;
+
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder, { recursive: true });
+  }
+
+  fs.appendFileSync(`${folder}${name}.log`, `${getTime(date)} ${type} ${message}\n`);
 }
 
-getTime = (date) => {
-    return `${pad(date.getHours(), 2)}:${pad(date.getMinutes(), 2)}:${pad(date.getSeconds(), 2)}:${date.getMilliseconds()}`;
+function feed() {
+  const date = new Date();
+  const folder = (opt && opt.folder) || './logs/';
+  const name = (opt && opt.name) || `${date.getFullYear()}-${pad(date.getMonth() + 1, 2)}-${pad(date.getDate(), 2)}`;
+
+  if (!fs.existsSync(folder)) {
+    fs.mkdirSync(folder, { recursive: true });
+  }
+
+  fs.appendFileSync(`${folder}${name}.log`, '\n');
 }
 
 module.exports = {
-    config: (options) => {
-        opt = options;
-    }, debug: (message) => {
-        add(message, '[DEBUG] -');
-    }, error: (message) => {
-        add(message, '[ERROR] -');
-    }, warn: (message) => {
-        add(message, '[WARN] -');
-    }, info: (message) => {
-        add(message, '[INFO] -');
-    }, feed: () => {
-        feed();
-    }
-}
+  config: (options) => {
+    opt = options;
+  },
+  debug: (message) => {
+    add(message, '[DEBUG] -');
+  },
+  error: (message) => {
+    add(message, '[ERROR] -');
+  },
+  warn: (message) => {
+    add(message, '[WARN] -');
+  },
+  info: (message) => {
+    add(message, '[INFO] -');
+  },
+  feed: () => {
+    feed();
+  },
+};
