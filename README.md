@@ -1,6 +1,10 @@
 # Xogger
 Node package to create logs.
 
+<p align="center">
+  <img src="https://i.imgur.com/roVm6b6.png">
+</p>
+
 ### Installation
 ````
 npm install xogger
@@ -8,27 +12,19 @@ npm install xogger
 
 ### Example
 ```javascript
-const xogger = require('xogger');
+const Xogger = require('xogger');
 
-// Log on default folder and name
+const xogger = new Xogger({
+  folder: './logs/folder/',
+  name: 'customLogName',
+});
+
 xogger.debug('Debug log');
 xogger.error('Error log');
 xogger.info('Info log');
 xogger.warn('Warn log');
 
-// Feed line
 xogger.feed();
-
-// Change folder of logs
-xogger.config({
-    folder: './logs/folder/'
-});
-
-// Change folder and name of logs
-xogger.config({
-    folder: './logs/folder/',
-    name: 'lol'
-});
 ```
 
 ### Built With
@@ -36,3 +32,6 @@ xogger.config({
 
 ### Authors
 * **Giovani de Oliveira** - [xxgicoxx](https://github.com/xxgicoxx)
+
+### Acknowledgments
+* [FlatIcon](https://www.flaticon.com/) - Icon

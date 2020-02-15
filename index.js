@@ -1,1 +1,1 @@
-module.exports = require('./src/xogger');
+module.exports = require('./src/controllers/XoggerController');
