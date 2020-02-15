@@ -23,8 +23,6 @@ xogger.debug('Debug log');
 xogger.error('Error log');
 xogger.info('Info log');
 xogger.warn('Warn log');
-
-xogger.feed();
 ```
 
 ### Built With
