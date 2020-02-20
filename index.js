@@ -1,1 +1,3 @@
-module.exports = require('./src/controllers/XoggerController');
+const { XoggerController } = require('./src/controllers');
+
+module.exports = XoggerController;
