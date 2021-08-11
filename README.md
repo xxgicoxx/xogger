@@ -1,16 +1,19 @@
 # Xogger
-Node package to create logs.
+Node.js package for create logs.
 
 <p align="center">
   <img src="https://i.imgur.com/roVm6b6.png">
 </p>
 
-### Installation
+# Prerequisites
+* [Node.js](https://nodejs.org/en/)
+
+# Installation
 ````
 npm install xogger
 ````
 
-### Example
+# Example
 ```javascript
 const Xogger = require('xogger');
 
@@ -25,11 +28,11 @@ xogger.info('Info log');
 xogger.warn('Warn log');
 ```
 
-### Built With
+# Built With
 * [Node.js](https://nodejs.org/en/)
 
-### Authors
-* **Giovani de Oliveira** - [xxgicoxx](https://github.com/xxgicoxx)
+# Authors
+* [xxgicoxx](https://github.com/xxgicoxx)
 
 ### Acknowledgments
-* [FlatIcon](https://www.flaticon.com/) - Icon
+* [FlatIcon](https://www.flaticon.com/)
