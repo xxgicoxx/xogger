@@ -34,5 +34,5 @@ xogger.warn('Warn log');
 # Authors
 * [xxgicoxx](https://github.com/xxgicoxx)
 
-### Acknowledgments
+# Acknowledgments
 * [FlatIcon](https://www.flaticon.com/)
