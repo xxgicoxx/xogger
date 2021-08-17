@@ -1,4 +1,4 @@
-# Xogger
+# xogger
 Node.js package for create logs.
 
 <p align="center">
