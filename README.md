@@ -2,7 +2,7 @@
 Node.js package for create logs.
 
 <p align="center">
-  <img src="https://i.imgur.com/roVm6b6.png">
+  <img src="assets/imgs/xogger.png">
 </p>
 
 # Prerequisites
