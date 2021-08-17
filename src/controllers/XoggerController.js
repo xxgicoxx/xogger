@@ -7,7 +7,9 @@ class XoggerController {
    * @param {string} [config.name] File name
    */
   constructor(config = {}) {
-    this._service = new XoggerService(config);
+    this._config = config;
+
+    this._service = new XoggerService(this._config);
   }
 
   /**
