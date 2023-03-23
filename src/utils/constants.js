@@ -1,6 +1,6 @@
 module.exports = Object.freeze({
-  DEBUG: '[DEBUG] -',
-  ERROR: '[ERROR] -',
   INFO: '[INFO] -',
+  DEBUG: '[DEBUG] -',
   WARNING: '[WARN] -',
+  ERROR: '[ERROR] -',
 });
