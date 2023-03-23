@@ -13,8 +13,17 @@ class XoggerController {
   }
 
   /**
+   * Info log
+   *
+   * @param {string} [message] Log message
+   */
+  info(message = '') {
+    this._service.info(message);
+  }
+
+  /**
    * Debug log
-   * 
+   *
    * @param {string} [message] Log message
    */
   debug(message = '') {
@@ -22,17 +31,8 @@ class XoggerController {
   }
 
   /**
-   * Error log
-   * 
-   * @param {string} [message] Log message
-   */
-  error(message = '') {
-    this._service.error(message);
-  }
-
-  /**
    * Warning log
-   * 
+   *
    * @param {string} [message] Log message
    */
   warn(message = '') {
@@ -40,12 +40,12 @@ class XoggerController {
   }
 
   /**
-   * Info log
-   * 
+   * Error log
+   *
    * @param {string} [message] Log message
    */
-  info(message = '') {
-    this._service.info(message);
+  error(message = '') {
+    this._service.error(message);
   }
 }
 

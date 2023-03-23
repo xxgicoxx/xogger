@@ -5,6 +5,12 @@ Node.js package for create logs.
   <img src="assets/imgs/xogger.png">
 </p>
 
+# Features
+* Create info logs
+* Create debug logs
+* Create warning logs
+* Create error logs
+
 # Prerequisites
 * [Node.js](https://nodejs.org/en/)
 

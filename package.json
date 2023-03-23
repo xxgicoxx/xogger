@@ -1,7 +1,7 @@
 {
   "name": "xogger",
   "displayName": "xogger",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "description": "Node.js package for create logs",
   "author": "Giovani de Oliveira <giovanioliveira@outlook.com.br>",
   "license": "MIT",
